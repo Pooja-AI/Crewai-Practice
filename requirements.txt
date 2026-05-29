@@ -1,0 +1,32 @@
+# Core CrewAI and LLM dependencies
+crewai==0.86.0
+crewai-tools==0.17.0
+langchain==0.3.13
+langchain-community==0.3.13
+langchain-anthropic>=0.3.0
+langchain-openai==0.2.14
+langchain-voyageai>=0.1.0
+openai==1.59.2
+setuptools==69.5.1
+
+# Search and web tools
+duckduckgo-search==7.0.1
+requests==2.32.3
+
+# Vector database for RAG
+chromadb==0.5.23
+
+# Data science and visualization
+matplotlib==3.8.4
+numpy==1.26.4
+pandas==2.2.3
+
+# Jupyter and utilities
+jupyter==1.1.1
+ipykernel==6.29.5
+watermark==2.5.0
+
+# Additional utilities
+python-dotenv==1.0.1
+pydantic==2.10.5
+pyyaml==6.0.1

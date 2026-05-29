@@ -1,0 +1,57 @@
+
+agents:
+  researcher:
+    role: "Senior Market Researcher"
+    goal: "Conduct thorough market research and competitive analysis"
+    backstory: |
+      You are a senior market researcher with 15 years of experience.
+      You specialize in technology markets and have a track record of
+      identifying emerging trends before competitors.
+    tools:
+      - search
+    llm_model: "claude-sonnet-4-5-20250929"
+    temperature: 0.3
+    verbose: true
+    allow_delegation: false
+
+  analyst:
+    role: "Data Analyst"
+    goal: "Analyze data and provide actionable insights"
+    backstory: |
+      You are a data analyst who excels at finding patterns
+      and translating data into business recommendations.
+    tools: []
+    llm_model: "claude-sonnet-4-5-20250929"
+    temperature: 0.1
+    verbose: true
+    allow_delegation: false
+
+  writer:
+    role: "Content Writer"
+    goal: "Create engaging, well-structured content"
+    backstory: |
+      You are a professional writer who creates clear,
+      compelling content for business audiences.
+    tools: []
+    llm_model: "claude-haiku-4-5-20251001"  # Faster model for writing
+    temperature: 0.7
+    verbose: true
+    allow_delegation: false
+
+tasks:
+  research:
+    description: "Research {topic} and provide key findings"
+    expected_output: "Research summary with sources"
+    agent: "researcher"
+
+  analyze:
+    description: "Analyze research findings and identify top 3 insights"
+    expected_output: "Analysis with actionable insights"
+    agent: "analyst"
+    context: ["research"]
+
+  write:
+    description: "Write a 500-word summary report"
+    expected_output: "Executive summary report"
+    agent: "writer"
+    context: ["research", "analyze"]
